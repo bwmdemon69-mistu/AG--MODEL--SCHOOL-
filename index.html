@@ -1,324 +1,865 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#087a43">
-<title>AG Model School | Come & Read, Go & Lead</title>
+
+<title>AG Model School | Chalabon, Dhaka</title>
+
 <style>
 :root{
-  --green:#087a43;--green2:#0b9251;--purple:#4b237c;--purple2:#6d3aa0;
-  --ink:#18212b;--muted:#66727d;--light:#f4faf7;--line:#e4ebe7;--white:#fff;
-  --shadow:0 16px 45px rgba(24,33,43,.10);
+  --green:#087a43;
+  --green2:#0aa65b;
+  --dark:#10251b;
+  --text:#26352d;
+  --light:#f4faf7;
+  --white:#fff;
+  --gold:#f5b942;
+  --shadow:0 12px 35px rgba(0,0,0,.10);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
-a{text-decoration:none;color:inherit}
-button,input,textarea{font:inherit}
-.container{width:min(1120px,92%);margin:auto}
 
-/* Top strip */
-.topbar{background:linear-gradient(90deg,var(--purple),var(--purple2));color:#fff;font-size:14px}
-.topbar .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-
-/* Header */
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #edf1ef}
-.nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--green);min-width:0}
-.logo-mark{width:56px;height:56px;flex:0 0 56px}.logo-img{width:62px;height:62px;object-fit:contain;border-radius:8px}.hero-real-logo{width:min(100%,330px);height:auto;max-height:330px;object-fit:contain}
-.brand-text{font-size:21px;line-height:1.05;white-space:nowrap}
-.brand small{display:block;color:#737b83;font-weight:600;font-size:12px;margin-top:5px}
-nav ul{display:flex;list-style:none;gap:22px;align-items:center}
-nav a{font-weight:700;font-size:14px;color:#313942;transition:.2s}
-nav a:hover{color:var(--green)}
-.menu{display:none;border:0;background:var(--green);color:white;width:48px;height:48px;border-radius:12px;font-size:24px;cursor:pointer}
-
-/* Hero */
-.hero{background:linear-gradient(135deg,#e9f8ef 0%,#fff 52%,#f2eafa 100%);padding:76px 0 88px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px}
-.badge{display:inline-flex;align-items:center;background:#fff;border:1px solid #dcebe2;color:var(--green);padding:8px 16px;border-radius:999px;font-weight:800;font-size:13px;margin-bottom:20px;box-shadow:0 8px 25px rgba(8,122,67,.07)}
-h1{font-size:clamp(44px,6vw,76px);line-height:1.02;color:var(--purple);margin-bottom:20px;letter-spacing:-2px}
-.green{color:var(--green)}
-.hero p{font-size:19px;color:#52606d;max-width:650px}
-.buttons{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:12px;font-weight:800;border:2px solid transparent;transition:.2s}
-.btn:hover{transform:translateY(-2px)}
-.primary{background:var(--green);color:#fff;box-shadow:0 9px 22px rgba(8,122,67,.18)}
-.secondary{border-color:var(--purple);color:var(--purple);background:#fff}
-.hero-card{background:#fff;border-radius:30px;padding:38px;box-shadow:var(--shadow);text-align:center}
-.hero-card .logo-mark{width:150px;height:150px}
-.hero-card h3{margin-top:15px;color:var(--purple);font-size:24px}
-.hero-card p{font-size:15px;margin:4px auto 0;color:var(--muted)}
-
-/* Stats */
-.stats{margin-top:-34px;position:relative;z-index:2}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
-.stat{padding:22px;text-align:center;border-right:1px solid #edf0ef}
-.stat:last-child{border:0}
-.stat strong{display:block;color:var(--green);font-size:26px}
-.stat span{color:#66737d;font-size:14px}
-
-/* Sections */
-section{padding:84px 0}
-.section-head{text-align:center;margin-bottom:42px}
-.section-head h2{font-size:clamp(32px,4vw,44px);color:var(--purple);line-height:1.1;margin-bottom:9px}
-.section-head p{color:#68737d;font-size:17px}
-.about{background:var(--light)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.about-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 10px 30px rgba(24,33,43,.05)}
-.about-card h3{color:var(--green);font-size:25px;margin-bottom:10px}
-
-/* Notices */
-.notice-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:24px}
-.notice{border:1px solid var(--line);border-left:5px solid var(--green);padding:19px 20px;border-radius:14px;margin-bottom:12px;background:#fff;transition:.2s}
-.notice:hover{transform:translateX(3px);box-shadow:0 8px 25px rgba(24,33,43,.06)}
-.notice b{display:block;color:var(--purple);margin-bottom:3px}
-.date{font-size:13px;color:#7b858c}
-
-/* Cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{padding:27px;border-radius:20px;background:#fff;border:1px solid var(--line);transition:.2s}
-.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.icon{font-size:35px;margin-bottom:12px}
-.card h3{color:var(--purple);margin-bottom:7px;font-size:22px}
-
-/* Gallery */
-.gallery{background:#f8f7fb}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gallery-box{height:190px;border-radius:18px;background:linear-gradient(135deg,#dff3e7,#eee5f7);display:flex;align-items:center;justify-content:center;font-size:54px;border:1px solid #e5e0ed}
-.photo-box{display:block;overflow:hidden;padding:0;cursor:pointer}
-.photo-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
-.photo-box:hover img{transform:scale(1.04)}
-
-/* Admission */
-.admission{background:linear-gradient(135deg,var(--purple),#6e3aa1);color:#fff}
-.admission .section-head h2,.admission .section-head p{color:#fff}
-.admission .btn{min-width:240px;background:#fff;color:var(--purple)}
-
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.contact-card{padding:30px;border-radius:22px;background:#f8faf9;border:1px solid var(--line)}
-.contact-card h3{color:var(--purple);font-size:25px}
-.contact-info{display:grid;gap:12px;margin-top:18px}
-.contact-info p{font-size:17px}
-form{display:grid;gap:13px}
-input,textarea{width:100%;padding:15px;border:1px solid #d7dfdb;border-radius:12px;background:#fff;outline:none;transition:.2s}
-input:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(8,122,67,.10)}
-textarea{min-height:145px;resize:vertical}
-form .btn{border:0;cursor:pointer;width:100%}
-
-/* Footer */
-footer{background:#15151a;color:#ddd;padding:40px 0}
-.footer-grid{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
-.footer-title{color:#fff;font-size:20px;font-weight:800}
-.copy{margin-top:20px;font-size:13px;color:#999}
-
-/* Mobile */
-@media(max-width:900px){
-  nav ul{display:none;position:absolute;top:84px;left:0;right:0;background:#fff;padding:16px 5%;flex-direction:column;align-items:stretch;gap:0;box-shadow:0 12px 25px rgba(0,0,0,.08)}
-  nav ul.open{display:flex}
-  nav li{border-bottom:1px solid #eef1ef}
-  nav li:last-child{border-bottom:0}
-  nav a{display:block;padding:12px 0}
-  .menu{display:block}
-  .hero-grid,.about-grid,.notice-grid,.contact-grid{grid-template-columns:1fr}
-  .hero-card{max-width:500px;margin:auto}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  scroll-behavior:smooth;
 }
-@media(max-width:650px){
-  .topbar .container{font-size:12px}
-  .topbar .container span:first-child{max-width:70%}
-  .nav{min-height:74px}
-  nav ul{top:74px}
-  .brand-text{font-size:16px}
-  .brand small{font-size:10px}
-  .logo-mark{width:48px;height:48px;flex-basis:48px}.logo-img{width:48px;height:48px}.hero-real-logo{width:240px}
-  .hero{padding:55px 0 70px}
-  h1{font-size:48px;letter-spacing:-1px}
-  .hero p{font-size:17px}
-  section{padding:68px 0}
-  .stats-grid{grid-template-columns:1fr}
-  .stat{border-right:0;border-bottom:1px solid #edf0ef}
-  .stat:last-child{border-bottom:0}
-  .cards{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr}
-  .gallery-box{height:150px}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.6;
 }
-@media(max-width:420px){
-  .brand-text{font-size:14px}
-  .hero-card{padding:28px}
-  h1{font-size:43px}
-  .buttons .btn{width:100%}
-  .gallery-grid{grid-template-columns:1fr}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* TOP BAR */
+.topbar{
+  background:var(--dark);
+  color:#fff;
+  font-size:14px;
+}
+
+.topbar .container{
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.topbar a{
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 3px 18px rgba(0,0,0,.08);
+}
+
+.nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-icon{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--green),var(--green2));
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-weight:bold;
+  font-size:20px;
+  box-shadow:0 6px 15px rgba(8,122,67,.25);
+}
+
+.logo-text h2{
+  color:var(--green);
+  font-size:20px;
+}
+
+.logo-text small{
+  color:#68756e;
+}
+
+nav{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+nav a{
+  font-weight:600;
+  color:#26352d;
+  transition:.2s;
+}
+
+nav a:hover{
+  color:var(--green);
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:var(--green);
+  color:#fff;
+  width:44px;
+  height:40px;
+  border-radius:10px;
+  font-size:22px;
+}
+
+/* HERO */
+.hero{
+  background:
+    linear-gradient(120deg,rgba(4,62,35,.94),rgba(8,122,67,.78)),
+    radial-gradient(circle at 80% 20%,#40c87d,transparent 35%);
+  color:#fff;
+  padding:90px 0;
+  overflow:hidden;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;
+  gap:45px;
+}
+
+.badge{
+  display:inline-block;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);
+  padding:7px 15px;
+  border-radius:30px;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,68px);
+  line-height:1.08;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#ffe18a;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:650px;
+  opacity:.94;
+}
+
+.buttons{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:10px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.btn-primary{
+  background:#fff;
+  color:var(--green);
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.55);
+  color:#fff;
+}
+
+.hero-card{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.22);
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+.hero-card h3{
+  font-size:25px;
+  margin-bottom:20px;
+}
+
+.hero-stat{
+  display:flex;
+  justify-content:space-between;
+  padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+.hero-stat:last-child{
+  border:0;
+}
+
+/* SECTIONS */
+section{
+  padding:80px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title .tag{
+  color:var(--green);
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:13px;
+}
+
+.section-title h2{
+  font-size:36px;
+  color:var(--dark);
+  margin:8px 0;
+}
+
+.section-title p{
+  color:#68756e;
+  max-width:650px;
+  margin:auto;
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.feature{
+  padding:30px;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  border:1px solid #edf2ef;
+  transition:.25s;
+}
+
+.feature:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:#e6f7ee;
+  color:var(--green);
+  font-size:25px;
+  margin-bottom:17px;
+}
+
+.feature h3{
+  margin-bottom:8px;
+  color:var(--dark);
+}
+
+/* ABOUT */
+.about{
+  background:var(--light);
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+}
+
+.about-box{
+  background:#fff;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+
+.about-box h3{
+  color:var(--green);
+  font-size:25px;
+  margin-bottom:15px;
+}
+
+.check{
+  margin-top:18px;
+}
+
+.check div{
+  margin:10px 0;
+}
+
+.check span{
+  color:var(--green);
+  font-weight:bold;
+}
+
+/* CLASSES */
+.classes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.class-card{
+  padding:25px;
+  border-radius:17px;
+  background:#fff;
+  border:1px solid #e8eee9;
+  box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.class-card h3{
+  color:var(--green);
+}
+
+.class-card p{
+  color:#68756e;
+  margin-top:5px;
+}
+
+/* NOTICE */
+.notice{
+  background:linear-gradient(135deg,#f5fff9,#e9f8f0);
+}
+
+.notice-box{
+  max-width:850px;
+  margin:auto;
+  background:#fff;
+  border-left:5px solid var(--green);
+  padding:25px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+
+.notice-box strong{
+  color:var(--green);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.gallery-item{
+  height:220px;
+  border-radius:17px;
+  overflow:hidden;
+  background:linear-gradient(135deg,#087a43,#48c887);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:22px;
+  font-weight:bold;
+  box-shadow:var(--shadow);
+}
+
+.gallery-item:nth-child(2){
+  background:linear-gradient(135deg,#075e35,#19a861);
+}
+
+.gallery-item:nth-child(3){
+  background:linear-gradient(135deg,#0b8d50,#75dca6);
+}
+
+/* CONTACT */
+.contact{
+  background:var(--dark);
+  color:#fff;
+}
+
+.contact .section-title h2{
+  color:#fff;
+}
+
+.contact .section-title p{
+  color:#c5d5cc;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.contact-card{
+  background:rgba(255,255,255,.08);
+  padding:25px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.contact-card h3{
+  color:#8ce0b2;
+  margin-bottom:8px;
+}
+
+.contact-card p{
+  color:#d7e2dc;
+}
+
+/* FOOTER */
+footer{
+  background:#07150e;
+  color:#b8c9c0;
+  padding:25px 0;
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.footer strong{
+  color:#fff;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+  .topbar .container{
+    justify-content:center;
+    text-align:center;
+  }
+
+  nav{
+    display:none;
+    position:absolute;
+    top:78px;
+    left:0;
+    right:0;
+    background:#fff;
+    padding:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+    flex-direction:column;
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero{
+    padding:65px 0;
+  }
+
+  .hero-grid,
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .features,
+  .classes,
+  .gallery,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:60px 0;
+  }
+
+  .section-title h2{
+    font-size:30px;
+  }
+
+  .gallery-item{
+    height:200px;
+  }
 }
 </style>
 </head>
+
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
   <div class="container">
-    <span>📚 Education • Character • Leadership</span>
-    <span>ESTD: 2016</span>
+    <span>🎓 Welcome to AG Model School</span>
+    <span>📍 Chalabon, Dakshinkhan, Dhaka-1230</span>
   </div>
 </div>
 
+<!-- HEADER -->
 <header>
   <div class="container nav">
-    <a class="brand" href="#home" aria-label="AG Model School home">
-      <img class="logo-img" src="logo.jpg" alt="AG Model School logo">
-      <span class="brand-text">AG MODEL SCHOOL<small>Come & Read, Go & Lead</small></span>
+
+    <a href="#home" class="logo">
+      <div class="logo-icon">AG</div>
+      <div class="logo-text">
+        <h2>AG Model School</h2>
+        <small>Learn • Grow • Succeed</small>
+      </div>
     </a>
-    <nav>
-      <button class="menu" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">☰</button>
-      <ul id="navlinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#notice">Notice</a></li>
-        <li><a href="#academics">Academics</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#admission">Admission</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#notice">Notice</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
 
-<main>
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="container hero-grid">
+
     <div>
-      <span class="badge">WELCOME TO AG MODEL SCHOOL</span>
-      <h1>Come & Read,<br><span class="green">Go & Lead.</span></h1>
-      <p>Building confident learners through quality education, creativity, discipline and leadership.</p>
+      <div class="badge">🏫 A Place to Learn & Grow</div>
+
+      <h1>
+        Welcome to<br>
+        <span>AG Model School</span>
+      </h1>
+
+      <p>
+        শিক্ষার মাধ্যমে সুন্দর ভবিষ্যৎ গড়ার লক্ষ্যে
+        AG Model School শিক্ষার্থীদের জন্য একটি
+        সুন্দর ও বন্ধুত্বপূর্ণ শিক্ষার পরিবেশ তৈরি করে।
+      </p>
+
       <div class="buttons">
-        <a class="btn primary" href="#admission">Admission Info →</a>
-        <a class="btn secondary" href="#about">Explore School</a>
+        <a href="#about" class="btn btn-primary">Explore School</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
       </div>
     </div>
+
     <div class="hero-card">
-      <img class="hero-real-logo" src="logo.jpg" alt="AG Model School logo">
-      <h3>AG Model School</h3>
-      <p>Learning today. Leading tomorrow.</p>
-    </div>
-  </div>
-</section>
+      <h3>🏆 School Information</h3>
 
-<div class="stats">
-  <div class="container stats-grid">
-    <div class="stat"><strong>2016</strong><span>Established</span></div>
-    <div class="stat"><strong>Quality</strong><span>Focused Education</span></div>
-    <div class="stat"><strong>Future</strong><span>Ready Students</span></div>
-  </div>
-</div>
-
-<section id="about" class="about">
-  <div class="container">
-    <div class="section-head">
-      <h2>About Our School</h2>
-      <p>A place where learning becomes a journey toward leadership.</p>
-    </div>
-    <div class="about-grid">
-      <div class="about-card"><h3>Our Mission</h3><p>AG Model School aims to provide a supportive learning environment where students can develop strong academic foundations, good values, creativity and confidence.</p></div>
-      <div class="about-card"><h3>Our Vision</h3><p>To nurture responsible, knowledgeable and compassionate young people who are prepared to contribute positively to society.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="notice">
-  <div class="container">
-    <div class="section-head"><h2>Latest Notices</h2><p>Important school announcements and updates.</p></div>
-    <div class="notice-grid">
-      <div>
-        <div class="notice"><b>📢 Admission Notice</b><span class="date">Important school admission information will appear here.</span></div>
-        <div class="notice"><b>📝 Examination Update</b><span class="date">Check this section for exam schedules and instructions.</span></div>
-        <div class="notice"><b>🎉 School Events</b><span class="date">Upcoming events and activity announcements.</span></div>
+      <div class="hero-stat">
+        <span>Classes</span>
+        <strong>Play – 8</strong>
       </div>
-      <div class="about-card"><h3>Notice Board</h3><p>Keep checking this page for the latest updates from AG Model School.</p></div>
+
+      <div class="hero-stat">
+        <span>Monthly Fee</span>
+        <strong>৳900</strong>
+      </div>
+
+      <div class="hero-stat">
+        <span>Location</span>
+        <strong>Dhaka-1230</strong>
+      </div>
+
+      <div class="hero-stat">
+        <span>Environment</span>
+        <strong>Friendly</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <div class="tag">Why Choose Us</div>
+      <h2>শিক্ষার জন্য সুন্দর পরিবেশ</h2>
+      <p>
+        শিক্ষার্থীদের জ্ঞান, শৃঙ্খলা ও দক্ষতা বৃদ্ধির জন্য
+        আমরা একটি সুন্দর শিক্ষার পরিবেশ তৈরি করতে কাজ করি।
+      </p>
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="icon">📚</div>
+        <h3>Quality Education</h3>
+        <p>
+          শিক্ষার্থীদের মৌলিক জ্ঞান ও শিক্ষার ভিত্তি শক্ত করার প্রতি গুরুত্ব।
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">👨‍🏫</div>
+        <h3>Experienced Teachers</h3>
+        <p>
+          শিক্ষার্থীদের শেখার জন্য সহযোগিতামূলক ও যত্নশীল পরিবেশ।
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🌱</div>
+        <h3>Student Development</h3>
+        <p>
+          পড়াশোনার পাশাপাশি শৃঙ্খলা, আত্মবিশ্বাস ও বিভিন্ন দক্ষতা বিকাশ।
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section id="academics" class="about">
+<!-- ABOUT -->
+<section class="about" id="about">
   <div class="container">
-    <div class="section-head"><h2>Academics</h2><p>Learning that prepares students for tomorrow.</p></div>
-    <div class="cards">
-      <div class="card"><div class="icon">🔬</div><h3>Science</h3><p>Encouraging curiosity, observation and practical learning.</p></div>
-      <div class="card"><div class="icon">📐</div><h3>Mathematics</h3><p>Developing logical thinking and problem-solving skills.</p></div>
-      <div class="card"><div class="icon">📖</div><h3>Languages</h3><p>Building strong communication, reading and writing skills.</p></div>
+
+    <div class="section-title">
+      <div class="tag">About Us</div>
+      <h2>AG Model School সম্পর্কে</h2>
     </div>
-  </div>
-</section>
 
-<section id="gallery" class="gallery">
-  <div class="container">
-    <div class="section-head"><h2>School Gallery</h2><p>Photos from campus life, activities and events.</p></div>
-    <div class="gallery-grid">
-      <a class="gallery-box photo-box" href="gallery/gallery-1.jpg" target="_blank"><img src="gallery/gallery-1.jpg" alt="AG Model School activity"></a>
-      <a class="gallery-box photo-box" href="gallery/gallery-2.jpg" target="_blank"><img src="gallery/gallery-2.jpg" alt="AG Model School achievement"></a>
-      <a class="gallery-box photo-box" href="gallery/gallery-3.jpg" target="_blank"><img src="gallery/gallery-3.jpg" alt="AG Model School students and teachers"></a>
-      <a class="gallery-box photo-box" href="gallery/gallery-4.jpg" target="_blank"><img src="gallery/gallery-4.jpg" alt="AG Model School Kids Rhymes Competition 2026"></a>
-    </div>
-  </div>
-</section>
+    <div class="about-grid">
 
-<section id="admission" class="admission">
-  <div class="container">
-    <div class="section-head"><h2>Admission</h2><p>Start your learning journey with AG Model School.</p></div>
-    <div style="text-align:center"><a class="btn" href="#contact">Contact for Admission</a></div>
-  </div>
-</section>
+      <div>
+        <h2>শিক্ষাই ভবিষ্যতের ভিত্তি</h2>
+        <p style="margin-top:15px">
+          AG Model School শিক্ষার্থীদের জন্য একটি
+          সুন্দর, নিরাপদ ও বন্ধুত্বপূর্ণ শিক্ষার পরিবেশ
+          তৈরির লক্ষ্য নিয়ে কাজ করে।
+        </p>
 
-<section id="contact">
-  <div class="container">
-    <div class="section-head"><h2>Contact Us</h2><p>We'd love to hear from you.</p></div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>AG MODEL SCHOOL</h3>
-        <div class="contact-info">
-          <p>📍 School Address: Chalabon, Dakshinkhan, Dhaka-1230</p>
-          <p>📞 Phone: <a href="tel:+8801603900822">01603900822</a></p>
-          <p>✉️ Email: <a href="mailto:agmodelschool@gamil.com">agmodelschool@gamil.com</a></p>
-          <p>🕘 Office Hours: Please contact the school</p>
+        <div class="check">
+          <div><span>✓</span> নিয়মিত শিক্ষা কার্যক্রম</div>
+          <div><span>✓</span> শিক্ষার্থীবান্ধব পরিবেশ</div>
+          <div><span>✓</span> নৈতিক ও শৃঙ্খলাবোধ</div>
+          <div><span>✓</span> ভবিষ্যৎ দক্ষতা উন্নয়ন</div>
         </div>
       </div>
-      <div class="contact-card">
-        <form onsubmit="sendMessage(event)">
-          <input required placeholder="Your Name" aria-label="Your Name">
-          <input required type="email" placeholder="Email" aria-label="Email">
-          <textarea required placeholder="Your Message" aria-label="Your Message"></textarea>
-          <button class="btn primary" type="submit">Send Message</button>
-        </form>
+
+      <div class="about-box">
+        <h3>🎓 Our Mission</h3>
+        <p>
+          শিক্ষার্থীদের জ্ঞান অর্জনের পাশাপাশি
+          ভালো মানুষ হিসেবে গড়ে তোলা এবং তাদের
+          ভবিষ্যতের জন্য প্রস্তুত করা।
+        </p>
       </div>
+
     </div>
   </div>
 </section>
-</main>
 
-<footer>
+<!-- CLASSES -->
+<section id="classes">
   <div class="container">
-    <div class="footer-grid">
-      <div><div class="footer-title">AG MODEL SCHOOL</div><div>Come & Read, Go & Lead.</div></div>
-      <div>ESTD: 2016</div>
+
+    <div class="section-title">
+      <div class="tag">Academic</div>
+      <h2>Our Classes</h2>
+      <p>Play থেকে Class 8 পর্যন্ত শিক্ষার ব্যবস্থা।</p>
     </div>
-    <div class="copy">© 2026 AG Model School. All rights reserved.</div>
+
+    <div class="classes">
+
+      <div class="class-card">
+        <h3>Play Group</h3>
+        <p>শিশুদের প্রাথমিক শিক্ষা ও শেখার ভিত্তি।</p>
+      </div>
+
+      <div class="class-card">
+        <h3>Nursery</h3>
+        <p>প্রাথমিক জ্ঞান ও শিক্ষার প্রস্তুতি।</p>
+      </div>
+
+      <div class="class-card">
+        <h3>Class 1</h3>
+        <p>ভিত্তিমূলক শিক্ষার উন্নয়ন।</p>
+      </div>
+
+      <div class="class-card">
+        <h3>Class 2</h3>
+        <p>শিক্ষার মৌলিক ধারণা শক্ত করা।</p>
+      </div>
+
+      <div class="class-card">
+        <h3>Class 3</h3>
+        <p>জ্ঞান ও দক্ষতা বৃদ্ধির শিক্ষা।</p>
+      </div>
+
+      <div class="class-card">
+        <h3>Class 4</h3>
+        <p>বিভিন্ন বিষয়ের ভিত্তি উন্নয়ন।</p>
+      </div>
+
+      <div class="class-card">
+        <h3>Class 5</h3>
+        <p>প্রাথমিক স্তরের গুরুত্বপূর্ণ প্রস্তুতি।</p>
+      </div>
+
+      <div class="class-card">
+        <h3>Class 6</h3>
+        <p>মাধ্যমিক স্তরের শিক্ষার প্রস্তুতি।</p>
+      </div>
+
+      <div class="class-card">
+        <h3>Class 7–8</h3>
+        <p>উচ্চতর শিক্ষার জন্য প্রয়োজনীয় ভিত্তি।</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<section class="notice" id="notice">
+  <div class="container">
+
+    <div class="section-title">
+      <div class="tag">Notice Board</div>
+      <h2>Latest Notice</h2>
+    </div>
+
+    <div class="notice-box">
+      <strong>📢 School Notice</strong>
+      <p style="margin-top:8px">
+        নতুন নোটিশ ও গুরুত্বপূর্ণ তথ্য এখানে প্রকাশ করা হবে।
+        নিয়মিত ওয়েবসাইটটি ভিজিট করুন।
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+
+    <div class="section-title">
+      <div class="tag">Our Gallery</div>
+      <h2>School Gallery</h2>
+      <p>আমাদের স্কুলের বিভিন্ন মুহূর্ত ও কার্যক্রম।</p>
+    </div>
+
+    <div class="gallery">
+
+      <div class="gallery-item">🏫 School Campus</div>
+      <div class="gallery-item">📚 Classroom</div>
+      <div class="gallery-item">🎓 Students</div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <div class="tag">Get In Touch</div>
+      <h2>Contact AG Model School</h2>
+      <p>স্কুল সম্পর্কে জানতে আমাদের সাথে যোগাযোগ করুন।</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>📍 Address</h3>
+        <p>
+          Chalabon, Dakshinkhan,<br>
+          Dhaka-1230, Bangladesh
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>📧 Email</h3>
+        <p>
+          agmodelschool@gmail.com
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>💰 Monthly Fee</h3>
+        <p>
+          Starting from ৳900
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer">
+
+    <div>
+      <strong>AG Model School</strong><br>
+      Learn • Grow • Succeed
+    </div>
+
+    <div>
+      © <span id="year"></span> AG Model School
+    </div>
+
   </div>
 </footer>
 
 <script>
 function toggleMenu(){
-  const links=document.getElementById('navlinks');
-  const menu=document.querySelector('.menu');
-  links.classList.toggle('open');
-  menu.setAttribute('aria-expanded', links.classList.contains('open'));
+  document.getElementById("nav").classList.toggle("active");
 }
-document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>{
-  document.getElementById('navlinks').classList.remove('open');
-  document.querySelector('.menu').setAttribute('aria-expanded','false');
-}));
-function sendMessage(e){
-  e.preventDefault();
-  alert('Thank you! Your message form is ready. Connect it to a backend/email service to receive submissions.');
-}
+
+document.querySelectorAll("nav a").forEach(function(link){
+  link.addEventListener("click",function(){
+    document.getElementById("nav").classList.remove("active");
+  });
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
+
 </body>
 </html>
